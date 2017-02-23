@@ -1,0 +1,31 @@
+
+<ion-view view-title="Newsfeeds">
+  <ion-content>
+    <div class="tabs">
+      <a class="tab-item active" ng-click="a('top')">
+        Top News
+      </a>
+      <a class="tab-item" ng-click="a('latest')">
+        Latest News
+      </a>
+      <a class="tab-item" ng-click="a('popular')">
+        Popular News
+      </a>
+    </div>
+    <div><br>
+  <ion-content class="item bg" ng-init="a()">
+     <div class="list">
+       <div class="bg1">
+      <div ng-repeat="latestNews in latestNewslist" >
+    <a class="item item-thumbnail-left" ng-click="openModal(latestNews)">
+      <img class="text-wrap" ng-src="{{latestNews.urlToImage}}">
+      <h2 ng-bind="latestNews.title"></h2>
+      <p class="description" ng-bind="latestNews.description"></p>  
+      <p class="time" ng-bind="latestNews.publishedAt"></p>
+      </a>
+    <div>
+  </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -106,7 +106,7 @@ for(var i=0;i<$scope.selection1.length;i++ ){
 }
 })
 
-.controller('browseCntrl',function($scope,$http,$window,$ionicTabsDelegate){
+.controller('browseCntrl',function($scope,$http,$window,$ionicTabsDelegate,$ionicModal,$cordovaSocialSharing,$cordovaInAppBrowser){
  $scope.displaynews=function(){ 
     $scope.output=JSON.parse(localStorage.getItem('data'));  
 $scope.outputname=JSON.parse(localStorage.getItem('data1'));    
@@ -120,11 +120,57 @@ $scope.api=$scope.outputname[i];
 }   
       }
       $scope.show=function(option){
+        // $scope.var=[]
+        switch(option)
+        {
+          case 'top':
+        $scope.d="activated1";
+        break;
+        case 'latest':
+        $scope.b="activated2";
+        break;
+        case 'popular':
+        $scope.c="activated3";
+        break;
+      }
+       $ionicModal.fromTemplateUrl('templates/desc.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  
+  $scope.openModal = function(arg) {
+    $scope.src=arg;
+    $scope.modal.show();
+  };
          $http.get("https://newsapi.org/v1/articles?source="+$scope.api+"&sortBy="+option+"&apiKey=c023863c25b445068d7bf9f98b660991").then(function(list2){
   $scope.newsData=list2.data.articles;
+  $scope.selected=option;
       })
      
-      }
+    }
+    $scope.shareContent=function(newsImage, description){  
+  $cordovaSocialSharing.share('NEWS', 'subject',newsImage,description) 
+  // Share via native share sheet  
+    .then(function(result) {      
+      // Success!    
+    }, function(err) {      
+      // An error occured. Show a message to the user    
+    });  
+  } 
+   //In App Browser Opening 
+       var options = {    
+         location: 'yes',
+             clearcache: 'no', 
+                toolbar: 'no' 
+               };   
+               $scope.openBrowser=function(url){ 
+                      $cordovaInAppBrowser.open(url, '_blank', options) 
+                           .then(function(event) {   
+                                   success      })   
+                                      .catch(function(event) {       
+                                          error      });
+                                            }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

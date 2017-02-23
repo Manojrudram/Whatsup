@@ -1,0 +1,21 @@
+  <ion-modal-view>
+    <ion-header-bar class="bar-calm">
+         
+  <div class="h1 title">Description</div>
+ <a href="#"><button class="button button-clear ion-android-share-alt" ng-click="shareContent(src.urlToImage,src.title)" style="left: 300px;"></button></a>
+       
+        </ion-header-bar>
+    <ion-content>
+     <div class="list contentlist" >
+      <div class="item item-text-wrap content" >
+         <center> <img ng-src="{{src.urlToImage}}"height="300" width="350"></center>
+           <h2 style="color: #d1195c; size: 16px; font-weight: bold">{{src.title}} </h2><br>
+           <h3 style="size: 14px;"style="size: 14px;">{{src.description}}</h3><br>
+           <p> <i class="icon ion-person" style="color: dodgerblue"></i> <span style="color: black; font-size: 12px"> {{src.author}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span style="color: green; font-size: 12px">{{src.publishedAt}}</span></p>
+             <a class="button button-light button-icon ion-android-more-vertical" ng-click="openBrowser(src.url)">&nbsp;More</a> 
+      </div>
+     </div>
+    </ion-content>
+  </ion-modal-view>
+

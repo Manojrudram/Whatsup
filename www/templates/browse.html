@@ -1,20 +1,23 @@
 <ion-view  style="color: white;" view-title="NewsFeed">
   <ion-content>
   <div class="tabs-striped tabs-color-assertive">
-    <div class="tabs">
-    <a class="tab-item active" ng-click="show('top')" style="font-weight: bold;">TopNews</button>
-      <a class="tab-item" ng-click="show('latest')"style="font-weight: bold;">LatestNews</button>
-         <a class="tab-item" ng-click="show('popular')"style="font-weight: bold;">PopularNews</button>
+    <div class="tabs" ng-class="{active : option == selected}">
+    <a class="tab-item" id='{{d}}' ng-click="show('top')"  style="font-weight: bold;">TopNews</button>
+      <a class="tab-item" id='{{b}}' ng-click="show('latest')" style="font-weight: bold;">LatestNews</button>
+         <a class="tab-item "id="{{c}}" ng-click="show('popular')" style="font-weight: bold;">PopularNews</button>
     </div><br><br>
  <ul>
 <li ng-repeat="x in newsData">
        <div class="list">
          <div class="item item-text-wrap">
-    <a class="item item-thumbnail-left" href="#/app/content">
+    <a class="item item-thumbnail-left" ng-click="openModal(x)">
       <img src="{{x.urlToImage}}" height="70" width="70">
 
-      <h2 style="color: #d1195c">{{x.title}} </h2>
-      <h4>{{x.description}}</h4>
+      <h2 style="color: #d1195c; size: 16px; font-weight: bold">{{x.title}} </h2>
+      <h4 style="size: 14px;">{{x.description}}</h4>
+      <p style="color:green; font-size: 12px;">
+      {{x.publishedAt}}
+      </p>
     </a>
    </div>
          </div>
