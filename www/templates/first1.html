@@ -1,0 +1,17 @@
+<ion-pane>
+      <ion-header-bar class="bar-positive">
+        <p><h1 class="title">News Papers</h1>
+        <a href="#/app/browse"><button class="button icon-right ion-chevron-right" ng-click="leave()">Next</button></a>
+        </p></ion-header-bar>
+      <ion-content>
+         
+          <div class="row row-wrap">  
+         <div class="col-33" ng-repeat="item in gridData" ng-class="{'selected':selection.indexOf(item.name ,item.id) != -1}">
+          <div class="image" ng-click="toggle(item.name ,item.id); display()" ng-value="'item.name'">
+        <br>  <center> <img src="{{item.urlsToLogos.small}}" height=70 width=100 style="margin: 10px"><br>
+           <p style="color:green; size: 18px; font-weight: bold">  {{ item.name }}</p>
+            </center>
+        </div>
+      </div>
+      </ion-content>
+    </ion-pane>

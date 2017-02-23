@@ -1,0 +1,54 @@
+/* Empty. Add your own CSS if you like */
+.selected {
+  background-color: #4c4748;
+  width: 125px;
+}
+.tabs{
+  top: 0px;
+}
+.profile{
+       background-color :white;      
+}
+.item.highlight{
+color: white;
+       background-color :white;
+       border-color :white;      
+}
+.button.icon.right{
+  padding-left: 150px;
+}
+.sea{
+    background: #0D416C;
+    border-color: #c90a49;
+    
+
+}
+
+.bar.bar-positive {
+    border-color: #c90a49;
+    background-color: #c90a49;
+    background-image: linear-gradient(0deg, #c90a49 50%, transparent 50%);
+    color: #fff;
+}
+.button.buton.button-clear.icon-right.ion-chevron-right{
+left: 348px;
+}
+
+.col-30{
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+ion-header-bar.bar-stable.bar.bar-header{
+   border-color: #0D416C;
+    background-color: #0D416C;
+    background-image: linear-gradient(0deg, #0D416C 50%, transparent 50%);
+    color: #fff;
+}
+.bar-stable .button.button-clear{
+  color: white;
+  size: 20px;
+}
+div.title.title-left.header-item{
+  color: white;
+  font-variant-position: center;
+}
