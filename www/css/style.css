@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .selected{
-  background-color: #ceceb7;
+  background-color: #eade96;
 }
 
 .tabs{
@@ -25,9 +25,9 @@ color: white;
 }
 
 .bar.bar-positive {
-    border-color: #c90a49;
-    background-color: #c90a49;
-    background-image: linear-gradient(0deg, #c90a49 50%, transparent 50%);
+    border-color: #f22b50;
+    background-color: #f22b50;
+    background-image: linear-gradient(0deg, #f22b50 50%, transparent 50%);
     color: #fff;
 }
 .button.buton.button-clear.icon-right.ion-chevron-right{
@@ -77,3 +77,4 @@ a.tab-item-activated{
     background-image: linear-gradient(0deg, #0D416C 50%, transparent 50%);
     color: #fff;
  } 
+

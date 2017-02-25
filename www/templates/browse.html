@@ -1,5 +1,5 @@
 <ion-view  style="color: white;" view-title="NewsFeed">
-  <ion-content>
+  <ion-content ng-init="alert()">
   <div class="tabs-striped tabs-color-assertive">
     <div class="tabs" ng-class="{active : option == selected}">
     <a class="tab-item" id='{{d}}' ng-click="show('top')"  style="font-weight: bold;">TopNews</button>
@@ -14,8 +14,8 @@
       <img src="{{x.urlToImage}}" height="70" width="70">
 
       <h2 style="color: #d1195c; size: 16px; font-weight: bold">{{x.title}} </h2>
-      <h4 style="size: 14px;">{{x.description}}</h4>
-      <p style="color:green; font-size: 12px;">
+      <p style="size: 14px;">{{x.description}}</p>
+   <p style="color:green; font-size: 12px;">
       {{x.publishedAt}}
       </p>
     </a>
